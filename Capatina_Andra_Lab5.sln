@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capatina_Andra_Lab5", "Capatina_Andra_Lab5.csproj", "{09AFD168-7212-42B9-8AB6-3F4151BA4768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLotModel", "..\AutoLotModel\AutoLotModel.csproj", "{4632A3BA-8CE1-4E0B-931D-7CE5884921B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09AFD168-7212-42B9-8AB6-3F4151BA4768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09AFD168-7212-42B9-8AB6-3F4151BA4768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09AFD168-7212-42B9-8AB6-3F4151BA4768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09AFD168-7212-42B9-8AB6-3F4151BA4768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4632A3BA-8CE1-4E0B-931D-7CE5884921B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4632A3BA-8CE1-4E0B-931D-7CE5884921B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4632A3BA-8CE1-4E0B-931D-7CE5884921B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4632A3BA-8CE1-4E0B-931D-7CE5884921B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51F3C36B-753A-438E-98E1-657F841B11BF}
+	EndGlobalSection
+EndGlobal
