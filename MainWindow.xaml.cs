@@ -77,6 +77,9 @@ namespace Capatina_Andra_Lab5
                         FirstName = firstNameTextBox.Text.Trim(),
                         LastName = lastNameTextBox.Text.Trim()
                     };
+                    BindingOperations.ClearBinding(firstNameTextBox, TextBox.TextProperty);
+                    BindingOperations.ClearBinding(lastNameTextBox, TextBox.TextProperty);
+                    SetValidationBinding();
                     //adaugam entitatea nou creata in context
                     ctx.Customers.Add(customer);
                     customerViewSource.View.Refresh();
@@ -94,6 +97,9 @@ namespace Capatina_Andra_Lab5
             {
                 try
                 {
+                    BindingOperations.ClearBinding(firstNameTextBox, TextBox.TextProperty);
+                    BindingOperations.ClearBinding(lastNameTextBox, TextBox.TextProperty);
+                    SetValidationBinding();
                     customer = (Customer)customerDataGrid.SelectedItem;
                     customer.FirstName = firstNameTextBox.Text.Trim();
                     customer.LastName = lastNameTextBox.Text.Trim();
@@ -298,6 +304,30 @@ namespace Capatina_Andra_Lab5
                                  inv.Color
                              };
             customerOrdersViewSource.Source = queryOrder.ToList();
+        }
+        private void SetValidationBinding()
+        {
+            Binding firstNameValidationBinding = new Binding();
+            firstNameValidationBinding.Source = customerViewSource;
+            firstNameValidationBinding.Path = new PropertyPath("FirstName");
+            firstNameValidationBinding.NotifyOnValidationError = true;
+            firstNameValidationBinding.Mode = BindingMode.TwoWay;
+            firstNameValidationBinding.UpdateSourceTrigger =
+           UpdateSourceTrigger.PropertyChanged;
+            //string required
+            firstNameValidationBinding.ValidationRules.Add(new StringNotEmpty());
+            firstNameTextBox.SetBinding(TextBox.TextProperty,
+           firstNameValidationBinding);
+            Binding lastNameValidationBinding = new Binding();
+            lastNameValidationBinding.Source = customerViewSource;
+            lastNameValidationBinding.Path = new PropertyPath("LastName");
+            lastNameValidationBinding.NotifyOnValidationError = true;
+            lastNameValidationBinding.Mode = BindingMode.TwoWay;
+            lastNameValidationBinding.UpdateSourceTrigger =
+           UpdateSourceTrigger.PropertyChanged;
+            //string min length validator
+            //lastNameValidationBinding.ValidationRules.Add(new StringMinLengthValid());
+            lastNameTextBox.SetBinding(TextBox.TextProperty, lastNameValidationBinding); //setare binding nou
         }
     }
 }
